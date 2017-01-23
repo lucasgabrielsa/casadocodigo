@@ -1,0 +1,23 @@
+{
+  "name": "casadocodigo",
+  "version": "1.0.0",
+  "description": "projeto de nodejs - foco aprendizagem",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasgabrielsa/casadocodigo.git"
+  },
+  "author": "lucasgabrielsa@hotmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasgabrielsa/casadocodigo/issues"
+  },
+  "homepage": "https://github.com/lucasgabrielsa/casadocodigo#readme",
+  "dependencies": {
+    "ejs": "^2.5.5",
+    "express": "^4.14.0"
+  }
+}

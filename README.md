@@ -1,5 +1,10 @@
 # casadocodigo
 
-- iniciado em janeiro / 2017
+# iniciado em janeiro / 2017
 
-nodejs project estudo alura
+# nodejs #alura
+
+projeto de estudo de nodejs - curso da alura
+
+
+www.alura.com.br
