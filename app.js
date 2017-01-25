@@ -1,6 +1,4 @@
 var app = require('./app/config/express')();
-var rotasProdutos = require('./app/routes/produtos')();
-
 /*var express = require('express');
 var app = express();*/
 

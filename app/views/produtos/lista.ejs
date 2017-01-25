@@ -15,12 +15,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Node JS</td>
-          <td>Livros para aprender nodejs</td>
-          <td>99.99</td>
-        </tr>
+        <% livros.forEach(function(livro) { %>
+          <tr>
+            <td><%=livro.id %></td>
+            <td><%=livro.nome %></td>
+            <td><%=livro.preco %></td>
+            <td><%=livro.descricao %></td>
+          </tr>
+        <% }); %>
       </tbody>
     </table>
   </body>
