@@ -7,9 +7,18 @@ module.exports = function(app) {
             if (erro) {
                 res.send(erro);
             } else {
-                res.render("produtos/lista", {
+              res.format({
+                html:function() {
+                  res.render("produtos/lista", {
                     livros: results,
-                    titulo: 'Lista de Produtos' });
+                    titulo: 'Lista de Produtos'
+                   });
+                },
+                json: function() {
+                  res.json(results);
+                }
+              });
+
             }
         });
         connection.end();
@@ -17,11 +26,12 @@ module.exports = function(app) {
 
     app.get('/produtos', listaProdutos);
 
+
     app.get('/produtos/novo', function(req, res) {
         res.render("produtos/form", {
             titulo: 'Cadastro de Novo Produto'
         });
-    });
+    });   
 
     app.post("/produtos", function(req, res) {
         var produto = req.body;
