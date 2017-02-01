@@ -18,7 +18,6 @@ module.exports = function(app) {
                   res.json(results);
                 }
               });
-
             }
         });
         connection.end();
@@ -29,12 +28,23 @@ module.exports = function(app) {
 
     app.get('/produtos/novo', function(req, res) {
         res.render("produtos/form", {
-            titulo: 'Cadastro de Novo Produto'
+            titulo: 'Cadastro de Novo Produto',
+            errosValidacao: {}
         });
-    });   
+    });
 
     app.post("/produtos", function(req, res) {
         var produto = req.body;
+
+        req.assert('nome', 'Título é obrigatório').notEmpty();
+        req.assert('preco', 'Formato inválido!').isFloat();
+
+        var erros = req.validationErrors();
+        if(erros) {
+          res.render('produtos/form', {errosValidacao:erros, titulo: 'Cadastro de Novo Produto'});
+          return;
+        }
+
         var connection = app.infra.connectionFactory();
         var produtosDAO = new app.infra.ProdutosDAO(connection);
         produtosDAO.salva(produto, function(erros, results) {
